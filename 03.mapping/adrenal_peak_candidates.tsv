@@ -1,0 +1,15 @@
+species	category	filename	full_path	set_scope
+human	replicate	ENCFF106DBO.trim.merged.srt.nodup.no_chrM_MT.tn5.pval0.01.300K.bfilt.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/rep1/ENCFF106DBO.trim.merged.srt.nodup.no_chrM_MT.tn5.pval0.01.300K.bfilt.narrowPeak.gz	replicate-specific
+human	replicate	ENCFF411KFJ.trim.merged.srt.nodup.no_chrM_MT.tn5.pval0.01.300K.bfilt.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/rep2/ENCFF411KFJ.trim.merged.srt.nodup.no_chrM_MT.tn5.pval0.01.300K.bfilt.narrowPeak.gz	replicate-specific
+human	pooled	rep.pooled.pval0.01.300K.bfilt.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/pooled-rep/rep.pooled.pval0.01.300K.bfilt.narrowPeak.gz	replicate-combined
+human	idr	idr.optimal_peak.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/idr_reproducibility/idr.optimal_peak.narrowPeak.gz	replicate-combined
+human	idr	idr.conservative_peak.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/idr_reproducibility/idr.conservative_peak.narrowPeak.gz	replicate-combined
+human	overlap	overlap.optimal_peak.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/overlap_reproducibility/overlap.optimal_peak.narrowPeak.gz	replicate-combined
+human	overlap	overlap.conservative_peak.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/overlap_reproducibility/overlap.conservative_peak.narrowPeak.gz	replicate-combined
+mouse	replicate	SRR8119844_1.trim.srt.nodup.no_chrM_MT.tn5.pval0.01.300K.bfilt.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/MouseAtac/AdrenalGland/peak/rep1/SRR8119844_1.trim.srt.nodup.no_chrM_MT.tn5.pval0.01.300K.bfilt.narrowPeak.gz	replicate-specific
+mouse	replicate	SRR8119845_1.trim.srt.nodup.no_chrM_MT.tn5.pval0.01.300K.bfilt.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/MouseAtac/AdrenalGland/peak/rep2/SRR8119845_1.trim.srt.nodup.no_chrM_MT.tn5.pval0.01.300K.bfilt.narrowPeak.gz	replicate-specific
+mouse	pooled	rep.pooled.pval0.01.300K.bfilt.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/MouseAtac/AdrenalGland/peak/pooled-rep/rep.pooled.pval0.01.300K.bfilt.narrowPeak.gz	replicate-combined
+mouse	idr	idr.optimal_peak.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/MouseAtac/AdrenalGland/peak/idr_reproducibility/idr.optimal_peak.narrowPeak.gz	replicate-combined
+mouse	idr	idr.conservative_peak.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/MouseAtac/AdrenalGland/peak/idr_reproducibility/idr.conservative_peak.narrowPeak.gz	replicate-combined
+mouse	overlap	overlap.optimal_peak.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/MouseAtac/AdrenalGland/peak/overlap_reproducibility/overlap.optimal_peak.narrowPeak.gz	replicate-combined
+mouse	overlap	overlap.conservative_peak.narrowPeak.gz	/ocean/projects/bio230007p/ikaplow/MouseAtac/AdrenalGland/peak/overlap_reproducibility/overlap.conservative_peak.narrowPeak.gz	replicate-combined

@@ -38,23 +38,23 @@ all_mouse <- c(mouse_specific, shared_mouse)
 
 # human using (hg38)
 job_human_specific <- submitGreatJob(human_specific, species = "hg38")
-job_human_shared   <- submitGreatJob(human_shared, species = "hg38")
-job_all_human      <- submitGreatJob(all_human,species = "hg38")
+job_human_shared <- submitGreatJob(human_shared, species = "hg38")
+job_all_human <- submitGreatJob(all_human,species = "hg38")
 
 # mouse using (mm10)
 job_mouse_specific <- submitGreatJob(mouse_specific, species = "mm10")
-job_shared_mouse   <- submitGreatJob(shared_mouse, species = "mm10")
-job_all_mouse      <- submitGreatJob(all_mouse,species = "mm10")
+job_shared_mouse <- submitGreatJob(shared_mouse, species = "mm10")
+job_all_mouse <- submitGreatJob(all_mouse,species = "mm10")
 
 # Get results
 # Human Results 
 res_human_specific <- getEnrichmentTables(job_human_specific)
-res_human_shared   <- getEnrichmentTables(job_human_shared)
-res_all_human      <- getEnrichmentTables(job_all_human)
+res_human_shared <- getEnrichmentTables(job_human_shared)
+res_all_human <- getEnrichmentTables(job_all_human)
 # Mouse Results
 res_mouse_specific <- getEnrichmentTables(job_mouse_specific)
-res_shared_mouse   <- getEnrichmentTables(job_shared_mouse)
-res_all_mouse      <- getEnrichmentTables(job_all_mouse)
+res_shared_mouse <- getEnrichmentTables(job_shared_mouse)
+res_all_mouse <- getEnrichmentTables(job_all_mouse)
 
 # Exrtract the GO BP
 get_bp <- function(res) res[["GO Biological Process"]]

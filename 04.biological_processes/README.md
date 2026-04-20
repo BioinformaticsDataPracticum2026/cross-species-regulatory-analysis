@@ -42,7 +42,10 @@ OCR sets were submitted to GREAT using the `submitGreatJob()` function with the 
 - R with `rGREAT`, `GenomicRanges`, `BiocManager`
 - Python with `pandas`, `matplotlib`
 
-## Results Preview
-![Human All, Mouse All, and Shared OCRs](results/plots_combined.png)
-![Human Specific OCRs](results/plots_human_specific.png)
-![Mouse Specific OCRs](results/plots_mouse_specific.png)
+## Figures 
+<img src="results/plots_combined.png" width="100%"/>
+
+<p float="left">
+  <img src="results/plots_human_specific.png" width="48%"/>
+  <img src="results/plots_mouse_specific.png" width="48%"/>
+</p>

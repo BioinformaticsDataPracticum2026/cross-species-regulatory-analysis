@@ -38,6 +38,39 @@ echo "Conserved promoters:"; wc -l conservedpromoters.bed
 echo "Conserved enhancers:"; wc -l conservedenhancers.bed
 echo "Human-specific promoters:"; wc -l humanspecific_promoters.bed
 echo "Human-specific enhancers:"; wc -l humanspecific_enhancers.bed
+
+# we want HUMAN-SPECIFIC IN HUMAN COORDINATES (hg38)
+# Using Xingyu's recovered files with original human coordinates
+# Classified against human TSS
+
+bedtools intersect -a human_adrenal_idr_optimal.human_specific.original_human_coordinates.bed -b human_tss_2kb.bed -u > human_specific_promoters_hg38.bed
+bedtools intersect -a human_adrenal_idr_optimal.human_specific.original_human_coordinates.bed -b human_tss_2kb.bed -v > human_specific_enhancers_hg38.bed
+
+# CONSERVED IN HUMAN COORDINATES (hg38)
+bedtools intersect -a human_adrenal_idr_optimal.shared.original_human_coordinates.bed -b human_tss_2kb.bed -u > conserved_promoters_hg38.bed
+bedtools intersect -a human_adrenal_idr_optimal.shared.original_human_coordinates.bed -b human_tss_2kb.bed -v > conserved_enhancers_hg38.bed
+
+echo ""
+echo "=== Human coordinates (hg38) ==="
+echo "Human-specific promoters (hg38):"; wc -l human_specific_promoters_hg38.bed
+echo "Human-specific enhancers (hg38):"; wc -l human_specific_enhancers_hg38.bed
+echo "Conserved promoters (hg38):"; wc -l conserved_promoters_hg38.bed
+echo "Conserved enhancers (hg38):"; wc -l conserved_enhancers_hg38.bed
+
+
+# we want MOUSE CONSERVED IN MOUSE COORDINATES (mm10)
+# Using native mouse conserved peaks
+# Classified against mouse TSS
+
+bedtools intersect -a mouse_adrenal_idr_optimal.shared_with_human_mapped.bed -b mouse_tss_2kb.bed -u > mouse_conserved_promoters.bed
+bedtools intersect -a mouse_adrenal_idr_optimal.shared_with_human_mapped.bed -b mouse_tss_2kb.bed -v > mouse_conserved_enhancers.bed
+
+echo ""
+echo "=== Mouse conserved (mm10) ==="
+echo "Mouse conserved promoters:"; wc -l mouse_conserved_promoters.bed
+echo "Mouse conserved enhancers:"; wc -l mouse_conserved_enhancers.bed
+
+
 echo "Mouse-specific promoters:"; wc -l mousespecific_promoters.bed
 echo "Mouse-specific enhancers:"; wc -l mousespecific_enhancers.bed
 

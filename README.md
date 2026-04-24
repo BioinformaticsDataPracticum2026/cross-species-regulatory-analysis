@@ -280,3 +280,8 @@ LLM assistance was used for debugging, documentation, and version-control suppor
 [1] OpenAI, “GPT-5.4 Model,” OpenAI API. [Online]. Available: https://developers.openai.com/api/docs/models/gpt-5.4. [Accessed: Apr. 6, 2026].
 
 [2] OpenAI, “Codex,” OpenAI Developers. [Online]. Available: https://developers.openai.com/codex/. [Accessed: Apr. 6, 2026].
+
+
+# Cite this project
+
+Chester Xiao, Xingyu Hu, Lekhya Dommalapati, Maitreyee Karne (2026). Cross-Species Regulatory Analysis. 03-713: Bioinformatics Data Integration Practicum, Carnegie Mellon Univeristy.

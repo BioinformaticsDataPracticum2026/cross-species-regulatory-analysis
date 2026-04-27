@@ -8,6 +8,7 @@
 #SBATCH --error=07.pipeline/run_adrenal_pipeline.%j.err
 #SBATCH --export=ALL
 
-cd /ocean/projects/bio230007p/xhu15/cross-species-regulatory-analysis
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "${repo_root}"
 
 bash 07.pipeline/run_adrenal_pipeline.sh "$@"

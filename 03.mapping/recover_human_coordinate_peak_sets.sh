@@ -3,6 +3,11 @@ set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 mapping_dir="${repo_root}/03.mapping"
+config_file=${PIPELINE_CONFIG:-${repo_root}/pipeline.conf}
+
+if [[ -f ${config_file} ]]; then
+  source "${config_file}"
+fi
 
 human_peaks=${mapping_dir}/human_adrenal_idr_optimal.mapping_preprocess.bed.gz
 human_specific_mapped=${mapping_dir}/human_adrenal_idr_optimal.HumanToMouse.no_mouse_native_overlap.bed.gz
@@ -15,6 +20,8 @@ human_specific_original=${mapping_dir}/human_adrenal_idr_optimal.human_specific.
 human_shared_original=${mapping_dir}/human_adrenal_idr_optimal.shared.original_human_coordinates.bed
 summary=${mapping_dir}/human_coordinate_recovered_peak_sets_summary.tsv
 
+# Recover original human-coordinate rows by matching mapped peak names back to
+# the human preprocessing file. This keeps downstream human analyses in hg38.
 gzip -dc ${human_specific_mapped} | cut -f4 | sort -u > ${human_specific_names}
 gzip -dc ${human_shared_mapped} | cut -f4 | sort -u > ${human_shared_names}
 

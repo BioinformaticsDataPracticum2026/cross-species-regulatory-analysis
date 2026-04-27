@@ -6,6 +6,12 @@ Map human adrenal ATAC-seq peaks to mouse and identify shared versus non-overlap
 
 ## Input peak sets
 
+These scripts can read shared path settings from the root-level `pipeline.conf` file. For a new environment, copy and edit:
+
+```bash
+cp pipeline.conf.example pipeline.conf
+```
+
 - Human species-level peaks:
   `/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/idr_reproducibility/idr.optimal_peak.narrowPeak.gz`
 - Mouse species-level peaks:
@@ -48,6 +54,8 @@ Supporting outputs:
 This workflow uses one HALPER direction only:
 
 - `Human -> Mouse`
+
+Task 2 must complete successfully before downstream biological process, promoter/enhancer, or motif analyses are run, because those later steps depend on the shared and species-specific peak sets produced here.
 
 ## Step 3: intersect mapped human peaks with native mouse peaks
 

@@ -120,11 +120,11 @@ The Task 3 script also loads `BiocManager` to help install `rGREAT` if it is mis
 
 ### HAL and HALPER
 
-HALPER depends on the HAL toolkit. In this project environment, HAL and HALPER were run from:
+HALPER depends on the HAL toolkit. In a local or cluster setup, configure these paths in `pipeline.conf`:
 
 ```bash
-/ocean/projects/bio230007p/xhu15/tools/hal
-/ocean/projects/bio230007p/xhu15/tools/halLiftover-postprocessing
+HAL_BIN=/path/to/hal/bin
+HALPER_DIR=/path/to/halLiftover-postprocessing
 ```
 
 To install HALPER from source in another location:
@@ -168,7 +168,7 @@ export PATH=/path/to/homer/bin:$PATH
 When running the full pipeline, provide this HOMER directory with:
 
 ```bash
-bash 07.pipeline/run_adrenal_pipeline.sh --homer /path/to/homer
+HOMER_DIR=/path/to/homer
 ```
 
 ## Data Sources
@@ -196,6 +196,12 @@ The default adrenal inputs used by the pipeline are:
 - Human TSS BED: `/ocean/projects/bio230007p/ikaplow/HumanGenomeInfo/gencode.v27.annotation.protTranscript.TSSsWithStrand_sorted.bed`
 - Mouse TSS BED: `/ocean/projects/bio230007p/ikaplow/MouseGenomeInfo/gencode.vM15.annotation.protTranscript.geneNames_TSSWithStrand_sorted.bed`
 
+For portability, these paths should be copied into a local root-level config file before running the pipeline:
+
+```bash
+cp pipeline.conf.example pipeline.conf
+```
+
 ## Pipeline Overview
 
 The automated pipeline performs the downstream adrenal analysis in this order:
@@ -209,7 +215,15 @@ The automated pipeline performs the downstream adrenal analysis in this order:
 7. Stage promoter/enhancer peak sets for HOMER.
 8. Run HOMER motif enrichment and summarize known motif results.
 
+Tasks 3 to 5 depend on the Task 2 mapping outputs. When the full pipeline is used, those dependencies are staged automatically in the correct order. If the workflow is run step-by-step, Task 2 must be completed successfully before downstream tasks are attempted.
+
 ## Usage: Full Pipeline
+
+First create a project config file and edit it for your environment:
+
+```bash
+cp pipeline.conf.example pipeline.conf
+```
 
 Run with default course-provided adrenal paths:
 
@@ -217,16 +231,11 @@ Run with default course-provided adrenal paths:
 sbatch 07.pipeline/run_adrenal_pipeline.slurm
 ```
 
-Run directly with explicit paths:
+Run directly with a config file:
 
 ```bash
 bash 07.pipeline/run_adrenal_pipeline.sh \
-  --human /path/to/human_adrenal.narrowPeak.gz \
-  --mouse /path/to/mouse_adrenal.narrowPeak.gz \
-  --hal /path/to/10plusway-master.hal \
-  --human-tss /path/to/human_tss.bed \
-  --mouse-tss /path/to/mouse_tss.bed \
-  --homer /path/to/homer
+  --config pipeline.conf
 ```
 
 Check [Task 7](https://github.com/BioinformaticsDataPracticum2026/cross-species-regulatory-analysis/tree/main/07.pipeline) for details.
@@ -236,6 +245,7 @@ Check [Task 7](https://github.com/BioinformaticsDataPracticum2026/cross-species-
 [Task 2, cross-species mapping:](https://github.com/BioinformaticsDataPracticum2026/cross-species-regulatory-analysis/blob/main/03.mapping/)
 
 ```bash
+cp pipeline.conf.example pipeline.conf
 bash 03.mapping/prepare_adrenal_mapping_preprocess.sh
 bash 03.mapping/run_adrenal_halper_mapping.sh
 bash 03.mapping/run_adrenal_bedtools_intersection.sh

@@ -1,0 +1,17 @@
+# Copy this file to pipeline.conf and edit paths for your environment.
+
+HUMAN_PEAKS=/ocean/projects/bio230007p/ikaplow/HumanAtac/AdrenalGland/peak/idr_reproducibility/idr.optimal_peak.narrowPeak.gz
+MOUSE_PEAKS=/ocean/projects/bio230007p/ikaplow/MouseAtac/AdrenalGland/peak/idr_reproducibility/idr.optimal_peak.narrowPeak.gz
+
+HAL_FILE=/ocean/projects/bio230007p/ikaplow/Alignments/10plusway-master.hal
+HAL_BIN=/path/to/hal/bin
+HALPER_DIR=/path/to/halLiftover-postprocessing
+
+HUMAN_TSS=/ocean/projects/bio230007p/ikaplow/HumanGenomeInfo/gencode.v27.annotation.protTranscript.TSSsWithStrand_sorted.bed
+MOUSE_TSS=/ocean/projects/bio230007p/ikaplow/MouseGenomeInfo/gencode.vM15.annotation.protTranscript.geneNames_TSSWithStrand_sorted.bed
+
+# Optional. Set this if you want Task 5 HOMER analyses to run.
+# HOMER_DIR=/path/to/homer
+
+# Optional R user library location for Task 3 package installation.
+# RGREAT_R_LIB=
